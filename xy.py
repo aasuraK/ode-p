@@ -18,7 +18,7 @@ def display_table_with_download(df, title, filename):
         mime='text/csv',
     )
 def load_data():
-    filepath = "G:/pathsetter/all_files_in_one02.csv"  # Update this path to point to your CSV file
+    filepath = "small_chunk_1.csv"  # Update this path to point to your CSV file
     data = pd.read_csv(filepath)
     data['Sale Date'] = pd.to_datetime(data['Sale Date'], errors='coerce')
     data[['Sales (Exc. Tax)', 'Tax', 'Sales(Inc. Tax)', 'Redeemed']] = data[['Sales (Exc. Tax)', 'Tax', 'Sales(Inc. Tax)', 'Redeemed']].replace(',', '', regex=True).astype(float)
