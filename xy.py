@@ -1,10 +1,11 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-@st.cache_data
+@st.cache
 def convert_df_to_csv(df):
-    # Cache the conversion to prevent computation on every rerun
+    # IMPORTANT: Cache the conversion to prevent computation on every rerun
     return df.to_csv().encode('utf-8')
+
 
 
 def display_table_with_download(df, title, filename):
